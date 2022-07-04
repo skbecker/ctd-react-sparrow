@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './App.module.css'
 const InputWithLabel = ({
     id,
     todoTitle,
@@ -19,6 +20,7 @@ const InputWithLabel = ({
         <>
             <label htmlFor={id}>{children}</label>
             <input
+                className={style.input}
                 name="title"
                 type={type}
                 id={id}

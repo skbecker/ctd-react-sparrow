@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:regular,bold,italic&subset=latin,latin-ext');
+
+@media (min-width: 768px) {
+    .addButton, .removeButton {
+      padding: 0 40px;
+    }
+  }
+
+ @media (max-width: 768px) {
+    .input {
+        width: 80%;
+    }
+}
+
+body {
+    background-color: #FFFBFF;
+    color: #0F1108;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+}
+
+nav {
+    background-color: #32292F;
+    color:#FFFBFF;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navUL {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+}
+
+nav li {
+    align-self: flex-end;
+}
+
+nav a:link {
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+nav a:visited {
+    color: pink;
+    padding: 10px;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: papayawhip;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 4em;
+    color: #32292F;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px
+
+}
+
+input {
+    width: 600px;
+    height: 48px;
+    align-self: center;
+    border-radius: 16px;
+    font-size: 2em;
+    text-align: center;
+    border-color: #0F1108;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 15px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 20px;
+}
+
+li {
+    align-self: center;
+}
+
+/* CSS */
+.addButton {
+  align-self: center;
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #32292F;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 25%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.addButton:after {
+  background-color: #32292F;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.addButton:hover:after, .removeButton:hover:after {
+  transform: translate(0, 0);
+}
+
+.addButton:active, .removeButton:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.addButton:hover, .removeButton:hover {
+  outline: 0;
+}
+
+
+.removeButton {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #32292F;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #32292F;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 32px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .removeButton:after {
+    background-color: #32292F;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 32px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
