@@ -1,5 +1,6 @@
 import React from 'react';
 import InputWithLabel from './InputWithLabel';
+import style from './App.module.css';
 
 // this file renders the form where each todo item is entered to create the todolist
 
@@ -24,11 +25,11 @@ function AddTodoForm( { onAddTodo }) {
         setTodoTitle('');
     }
     return (
-        <form id="todoForm" onSubmit={handleAddTodo}>
+        <form className={style.form} id="todoForm" onSubmit={handleAddTodo}>
             <InputWithLabel isFocused todoTitle={todoTitle} handleTitleChange={handleTitleChange}>
                 Title
             </InputWithLabel>
-            <button type ="submit">Add</button>
+            <button className={style.addButton} role="button" type ="submit">Add</button>
         </form>
     );
 }
