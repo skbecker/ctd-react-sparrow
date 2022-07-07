@@ -1,5 +1,7 @@
 import React from 'react';
-import style from './App.module.css'
+import style from './App.module.css';
+import PropTypes from 'prop-types';
+
 const InputWithLabel = ({
     id,
     todoTitle,
@@ -31,5 +33,13 @@ const InputWithLabel = ({
         </>
     );
 };
+
+InputWithLabel.propTypes = {
+    id: PropTypes.string,
+    todoTitle: PropTypes.string,
+    handleTitleChange: PropTypes.func,
+    isFocused: PropTypes.bool,
+    children: PropTypes.string
+}
 
 export default InputWithLabel;
