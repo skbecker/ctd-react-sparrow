@@ -1,6 +1,7 @@
 import React from 'react';
 import InputWithLabel from './InputWithLabel';
 import style from './App.module.css';
+import PropTypes from 'prop-types';
 
 // this file renders the form where each todo item is entered to create the todolist
 
@@ -32,6 +33,10 @@ function AddTodoForm( { onAddTodo }) {
             <button className={style.addButton} role="button" type ="submit">Add</button>
         </form>
     );
+}
+
+AddTodoForm.propTypes = {
+    onAddTodo: PropTypes.func
 }
 
 export default AddTodoForm;

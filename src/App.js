@@ -1,8 +1,7 @@
 import React from 'react';
-import AddTodoForm from './AddTodoForm';
-import TodoList from './TodoList';
-import style from './App.module.css';
-import TodoListItem from './TodoListItem';
+import AddTodoForm from './components/AddTodoForm';
+import TodoList from './components/TodoList';
+import style from './components/App.module.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
