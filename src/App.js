@@ -3,6 +3,7 @@ import AddTodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
 import style from './components/App.module.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { object } from 'prop-types';
 
 function App() {
 
@@ -14,12 +15,24 @@ function App() {
 
   const getRecords = () => {
 
-    fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`, {
+    fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
       },
     }).then((response) => response.json()).then((result) => {
+      result.records.sort((objectA, objectB) => {
+        if (objectA.fields.Title < objectB.fields.Title) {
+          return -1;
+        }
+        else if (objectA.fields.Title > objectB.fields.Title) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      }
+    );
       setTodoList(result.records);
       setIsLoading(false);
       console.log(result.records);
